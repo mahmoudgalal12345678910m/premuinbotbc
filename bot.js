@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "/"
+const prefix = "!!"
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -15,7 +15,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if(!message.channel.guild) return;
-  if(message.content.startsWith('/bc')) {
+  if(message.content.startsWith('!!bc')) {
   if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
   let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -56,7 +56,7 @@ client.on('message', message => {
 
 
     const devs = ['497888439304454144' , '' , '' , ''];
-    const control = "/";
+    const control = "!!";
     client.on('message', message => {
         var argresult = message.content.split(` `).slice(1).join(' ');
           if (!devs.includes(message.author.id)) return;
